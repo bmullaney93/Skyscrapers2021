@@ -197,7 +197,8 @@ def main():
     with row1_1:
         wiki_data()
 
-    if st.sidebar.checkbox('All Skyscrapers'):
+    option = st.sidebar.radio("How would you like to view the data?",("All Skyscrapers","Skyscrapers by City"))
+    if option == "All Skyscrapers":
         row4_spacer1, row4_1, row4_spacer2 = st.beta_columns((.1, 2,.1))       
         with row4_1:
             sliderNumber = slider(data)
@@ -215,7 +216,7 @@ def main():
     else:
         st.write('')
 
-    if st.sidebar.checkbox('Skyscrapers by City'):
+    if option == "Skyscrapers by City":
         row2_spacer1, row2_1, row2_spacer2, row2_2 = st.beta_columns((.1, 1,.1, 1.5))       
         with row2_1:
             cityOption = city_List(data)
