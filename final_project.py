@@ -41,7 +41,7 @@ def wiki_data(): #new module that we haven't used in class
 def wiki_search(data,cityOption): 
     st.markdown(f"Do you want to search '**_{cityOption} Skyscrapers_**' on Wikipedia?")
     results = wikipedia.search(f'{cityOption} Skyscrapers') #search for info about the selected city
-    agree = st.checkbox('I agree') #ability to show/hide option   
+    agree = st.checkbox("Yes, I'd like to see some additional info.") #ability to show/hide option   
     return results, agree
 
 def wiki_results(results,agree): #seperated the results for formatting purposes
