@@ -234,7 +234,8 @@ def main():
             city_Table(data, cityOption)
     else:
         st.write('')
-    st.text_area("**REFERENCES:**",
+    label = st.markdown("**REFERENCES:**)
+    st.text_area(label,
                  """https://wikipedia.readthedocs.io/en/latest/code.html#api
                  https://seaborn.pydata.org/generated/seaborn.barplot.html
                  https://stackoverflow.com/questions/59213470/how-to-annotate-text-on-horizontal-seaborn-barplot
