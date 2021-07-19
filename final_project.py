@@ -25,7 +25,7 @@ import streamlit as st
 
 @st.cache
 def load_data(): # loading the data using pandas
-    data = pd.read_csv('Skyscrapers2021.csv')
+    data = pd.read_csv('/Users/brittanymullaney/Documents/CS602/FinalProject/Skyscrapers2021.csv')
     lowercase = lambda x: str(x).lower()
     data.rename(lowercase, axis="columns", inplace=True)
     return data
@@ -64,7 +64,6 @@ def city_List(data):
     return cityOption
 
 def city_count(data,cityOption):
-    st.write('') #space/new line
     count_df = data[data['city']==cityOption] #filter list of names based on city chosen
     index = count_df.index
     rows = len(index) #counting the number of skyscrapers per city    
@@ -105,6 +104,7 @@ def city_Map(data,cityOption):
 
 def city_Table(data,cityOption):
     st.subheader(f'Details about the Skyscrapers in {cityOption}:')
+    city_count(data, cityOption)
     skyscrapers = data[['city','name','completion','feet','floors','material','function']] #pull data for table
     table_data = pd.DataFrame(skyscrapers)
     result = table_data[table_data['city']==cityOption] #filter table data to chosen city
@@ -193,7 +193,7 @@ def main():
     with row1_1:
         wiki_data()
 
-    if st.sidebar.button('See All Skyscrapers'):
+    if st.sidebar.checkbox('See All Skyscrapers'):
         row4_spacer1, row4_1, row4_spacer2 = st.beta_columns((.1, 2,.1))       
         with row4_1:
             sliderNumber = slider(data)
@@ -211,12 +211,10 @@ def main():
     else:
         st.write('')
 
-    if st.sidebar.button('See Skyscrapers by City'):
+    if st.sidebar.checkbox('See Skyscrapers by City'):
         row2_spacer1, row2_1, row2_spacer2, row2_2 = st.beta_columns((.1, 1,.1, 1.5))       
         with row2_1:
             cityOption = city_List(data)
-        with row2_2:
-            city_count(data, cityOption)
     
         row3a_spacer1, row3a_1, row3a_spacer2, row3a_2, row3a_spacer3 = st.beta_columns((.1,1,.1,1,.1))
         with row3a_1:
@@ -230,6 +228,6 @@ def main():
         with row3_2, _lock:
             city_Table(data, cityOption)
     else:
-        st.write('') 
+        st.write('')
+        
 main()
-
