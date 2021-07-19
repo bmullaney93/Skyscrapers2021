@@ -234,8 +234,7 @@ def main():
             city_Table(data, cityOption)
     else:
         st.write('')
-    label = st.markdown("**REFERENCES:**)
-    st.text_area(label,
+    st.text_area("REFERENCES:",
                  """https://wikipedia.readthedocs.io/en/latest/code.html#api
                  https://seaborn.pydata.org/generated/seaborn.barplot.html
                  https://stackoverflow.com/questions/59213470/how-to-annotate-text-on-horizontal-seaborn-barplot
@@ -244,19 +243,4 @@ def main():
                  https://stackoverflow.com/questions/2953746/python-parse-comma-separated-number-into-int""")
         
 main()
-
-
-# _____________References______________
-# Wikipedia module: https://wikipedia.readthedocs.io/en/latest/code.html#api
-# Seaborn module: https://seaborn.pydata.org/generated/seaborn.barplot.html
-# Seaborn barplot: https://stackoverflow.com/questions/59213470/how-to-annotate-text-on-horizontal-seaborn-barplot
-# Layout: https://github.com/tylerjrichards/streamlit_goodreads_app/blob/master/books.py
-# String conversion: https://stackoverflow.com/questions/34866781/how-to-delete-the-very-last-character-from-every-string-in-a-list-of-strings
-#                    https://stackoverflow.com/questions/2953746/python-parse-comma-separated-number-into-int
-
-
-
-
-
-
 
