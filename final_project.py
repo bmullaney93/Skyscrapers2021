@@ -240,6 +240,12 @@ https://seaborn.pydata.org/generated/seaborn.barplot.html
 https://stackoverflow.com/questions/59213470/how-to-annotate-text-on-horizontal-seaborn-barplot
 https://github.com/tylerjrichards/streamlit_goodreads_app/blob/master/books.py
 https://stackoverflow.com/questions/2953746/python-parse-comma-separated-number-into-int""")
-        
+
+'''
+https://seaborn.pydata.org/generated/seaborn.barplot.html
+https://stackoverflow.com/questions/59213470/how-to-annotate-text-on-horizontal-seaborn-barplot
+https://github.com/tylerjrichards/streamlit_goodreads_app/blob/master/books.py
+https://stackoverflow.com/questions/2953746/python-parse-comma-separated-number-into-int""")
+'''
 main()
 
