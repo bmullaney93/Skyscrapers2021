@@ -150,6 +150,7 @@ def tall_Floors(data,sliderNumber):
     st.pyplot(fig)    
 
 def all_Map(data):
+    st.write("Here's a map of all the top 100 tallest Skyscrapers:")
     locations = data[['name','city','completion','feet','latitude','longitude']]
     map_data = pd.DataFrame(locations)
     layer1 = pdk.Layer('ScatterplotLayer',
