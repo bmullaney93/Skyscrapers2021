@@ -190,7 +190,7 @@ def main():
     row0_1.title('Skyscrapers 2021')
     row0_2.text_area("",
                      """Created by: Brittany Mullaney
-                     Bentley University""")
+                       Bentley University""")
 
     with row0_2:
         st.write('')
