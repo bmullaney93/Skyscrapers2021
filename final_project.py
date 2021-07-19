@@ -188,14 +188,19 @@ def main():
     
     row0_spacer1, row0_1, row0_spacer2, row0_2 = st.beta_columns((.1, 3, .8, 1))
     row0_1.title('Skyscrapers 2021')
-    row0_2.text_area("",
+    with row0_2:
+        st.write("")
+    
+    row1_spacer1, row1_1, row1_spacer2, row1_2, row1_spacer3 = st.beta_columns((.1, 2, .1,1,.1)) #indent next row
+    
+    with row1_1:
+        wiki_data()   
+    row1_2.text_area("",
                      """Created by: Brittany Mullaney
                        Bentley University""")
 
     
-    row1_spacer1, row1_1, row1_spacer2 = st.beta_columns((.1, 3.2, .1)) #indent next row
-    with row1_1:
-        wiki_data()
+
 
     option = st.sidebar.radio("How would you like to view the data?",("All Skyscrapers","Skyscrapers by City"))
     if option == "All Skyscrapers":
