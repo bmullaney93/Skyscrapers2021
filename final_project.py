@@ -192,8 +192,6 @@ def main():
                      """Created by: Brittany Mullaney
                        Bentley University""")
 
-    with row0_2:
-        st.write('')
     
     row1_spacer1, row1_1, row1_spacer2 = st.beta_columns((.1, 3.2, .1)) #indent next row
     with row1_1:
