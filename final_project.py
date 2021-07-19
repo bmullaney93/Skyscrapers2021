@@ -189,7 +189,8 @@ def main():
     row0_spacer1, row0_1, row0_spacer2, row0_2 = st.beta_columns((.1, 3, .8, 1))
     row0_1.title('Skyscrapers 2021')
     row0_2.text_area("",
-                     """Created by: Brittany Mullaney""")
+                     """Created by: Brittany Mullaney
+                     Bentley University""")
 
     with row0_2:
         st.write('')
