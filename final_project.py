@@ -195,7 +195,7 @@ def main():
     
     with row1_1:
         wiki_data()   
-    row1_2.markdown("_Created by: Brittany Mullane_y")
+    row1_2.markdown("Created by: Brittany Mullaney")
 
 
     option = st.sidebar.radio("How would you like to view the data?",("All Skyscrapers","Skyscrapers by City"))
