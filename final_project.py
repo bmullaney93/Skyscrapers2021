@@ -25,12 +25,12 @@ import streamlit as st
 
 @st.cache
 def load_data(): # loading the data using pandas
-    data = pd.read_csv('Skyscrapers2021.csv')
+    data = pd.read_csv('/Users/brittanymullaney/Documents/CS602/FinalProject/Skyscrapers2021.csv')
     lowercase = lambda x: str(x).lower()
     data.rename(lowercase, axis="columns", inplace=True)
     return data
 
-def wiki_data(): #new module that we haven't used in class
+def wiki_data(): #new module that we haven't used in class 
     st.markdown("Hey there! Welcome to the Skyscraper Analysis App. This app dives into the top 100 tallest skyscrapers around the world.")
     result = wikipedia.page("Skyscrapers") #pulling wikipedia page info
     st.header("What is a Skyscraper?")
@@ -38,13 +38,13 @@ def wiki_data(): #new module that we haven't used in class
     with st.beta_expander('Expand to see a summary'):
         st.write(result.summary) #show a wikipedia summary of Skyscrapers    
 
-def wiki_search(data,cityOption): 
+def wiki_search(data,cityOption): #wikipedia module - searching by city
     st.markdown(f"Do you want to search '**_{cityOption} Skyscrapers_**' on Wikipedia?")
     results = wikipedia.search(f'{cityOption} Skyscrapers') #search for info about the selected city
     agree = st.checkbox("Yes, I'd like to see some additional info.") #ability to show/hide option   
     return results, agree
 
-def wiki_results(results,agree): #seperated the results for formatting purposes
+def wiki_results(results,agree): #wikipedia module - seperated the results for formatting purposes
     if agree:
         if len(results) == 0:
             st.write('There is no additional info')
@@ -180,7 +180,6 @@ def all_Map(data):
         layers=[layer1],
         tooltip=tool_tip))    
 
-
 def main():
     st.set_page_config(layout="wide")
     data = load_data()
@@ -213,7 +212,7 @@ def main():
         row6_spacer1, row6_1, row6_spacer2 = st.beta_columns((.1, 2,.1))       
         with row6_1:
             all_Map(data)
-        
+                
     else:
         st.write('')
 
@@ -235,5 +234,28 @@ def main():
             city_Table(data, cityOption)
     else:
         st.write('')
+    st.text_area("REFERENCES:",
+                 """https://wikipedia.readthedocs.io/en/latest/code.html#api
+                    https://seaborn.pydata.org/generated/seaborn.barplot.html
+                    https://stackoverflow.com/questions/59213470/how-to-annotate-text-on-horizontal-seaborn-barplot
+                    https://github.com/tylerjrichards/streamlit_goodreads_app/blob/master/books.py
+                    https://stackoverflow.com/questions/34866781/how-to-delete-the-very-last-character-from-every-string-in-a-list-of-strings
+                    https://stackoverflow.com/questions/2953746/python-parse-comma-separated-number-into-int""")
         
 main()
+
+
+# _____________References______________
+# Wikipedia module: https://wikipedia.readthedocs.io/en/latest/code.html#api
+# Seaborn module: https://seaborn.pydata.org/generated/seaborn.barplot.html
+# Seaborn barplot: https://stackoverflow.com/questions/59213470/how-to-annotate-text-on-horizontal-seaborn-barplot
+# Layout: https://github.com/tylerjrichards/streamlit_goodreads_app/blob/master/books.py
+# String conversion: https://stackoverflow.com/questions/34866781/how-to-delete-the-very-last-character-from-every-string-in-a-list-of-strings
+#                    https://stackoverflow.com/questions/2953746/python-parse-comma-separated-number-into-int
+
+
+
+
+
+
+
