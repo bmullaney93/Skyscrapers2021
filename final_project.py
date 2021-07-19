@@ -46,10 +46,13 @@ def wiki_search(data,cityOption):
 
 def wiki_results(results,agree): #seperated the results for formatting purposes
     if agree:
-        pageSelector = st.selectbox("Please choose the page you'd like to read about:",results) #specified page options to choose from
-        page = wikipedia.page(pageSelector) #look up page option
-        with st.beta_expander('Expand to see the summary'): #allow user to minimize summary
-            st.write(page.summary)
+        if len(results) == 0:
+            st.write('There is no additional info')
+        else:
+            pageSelector = st.selectbox("Please choose the page you'd like to read about:",results) #specified page options to choose from
+            page = wikipedia.page(pageSelector) #look up page option
+            with st.beta_expander('Expand to see the summary'): #allow user to minimize summary
+                st.write(page.summary)
     
 def city_List(data):
     st.header('Skyscrapers by City')    
