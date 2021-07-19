@@ -191,7 +191,7 @@ def main():
     with row0_2:
         st.write("")
     
-    row1_spacer1, row1_1, row1_spacer2, row1_2, row1_spacer3 = st.beta_columns((.1, 3, .1,1,.1)) # next row
+    row1_spacer1, row1_1, row1_spacer2, row1_2 = st.beta_columns((.1, 3, .1,1)) # next row
     
     with row1_1:
         wiki_data()   
