@@ -25,7 +25,7 @@ import streamlit as st
 
 @st.cache
 def load_data(): # loading the data using pandas
-    data = pd.read_csv('/Users/brittanymullaney/Documents/CS602/FinalProject/Skyscrapers2021.csv')
+    data = pd.read_csv('Skyscrapers2021.csv')
     lowercase = lambda x: str(x).lower()
     data.rename(lowercase, axis="columns", inplace=True)
     return data
